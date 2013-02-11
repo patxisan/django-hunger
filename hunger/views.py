@@ -11,7 +11,7 @@ class InviteView(FormView):
     """
     Allow a user to send invites.
     """
-    template_name = 'hunger/request_invite.html'
+    template_name = 'launch/request_invite.html'
     form_class = InviteSendForm
     success_url = reverse_lazy('hunger-verified')
 
@@ -32,7 +32,7 @@ class NotBetaView(TemplateView):
     Display a message to the user after the invite request is completed
     successfully.
     """
-    template_name='hunger/not_in_beta.html'
+    template_name='launch/not_in_beta.html'
 
 
 class VerifiedView(TemplateView):
@@ -40,7 +40,7 @@ class VerifiedView(TemplateView):
     Display a message to the user after the invite request is completed
     successfully.
     """
-    template_name='hunger/verified.html'
+    template_name='launch/verified.html'
 
 
 class InvalidView(TemplateView):
@@ -48,7 +48,7 @@ class InvalidView(TemplateView):
     Display a message to the user that the invitation code is
     invalid or has already been used.
     """
-    template_name='hunger/invalid.html'
+    template_name='launch/invalid.html'
 
 
 def verify_invite(request, code):
